@@ -59,7 +59,7 @@ async function login(req, res) {
 
   try {
       const [user] = await dbCon.query(
-      "SELECT username,userid,password FROM usersTable WHERE email=?",
+      "SELECT username,userid,password FROM userstable WHERE email=?",
       [email]
     );
     if (user.length === 0) {
