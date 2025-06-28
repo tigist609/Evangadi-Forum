@@ -14,7 +14,7 @@ function Answers() {
   const [question, setQuestion] = useState(null);
   const [answers, setAnswers] = useState([]);
   const [answerText, setAnswerText] = useState("");
-const {user}=useContext(AppState)
+  const { user } = useContext(AppState);
   const navigate = useNavigate();
 
   // Pagination state
@@ -49,12 +49,9 @@ const {user}=useContext(AppState)
   const handleAnswerSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        `/answers/${id}`,
-        {
-          answer: answerText,
-        }
-      );
+      await axios.post(`/answers/${id}`, {
+        answer: answerText,
+      });
 
       setAnswerText("");
 
